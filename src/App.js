@@ -35,7 +35,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Card login={this.state.login} image={this.state.avatar_url} />
+        {this.state.map(follower => (
+          <Card login={follower.login} image={follower.avatar_url} />
+        ))}
       </div>
     );
   }
